@@ -1,0 +1,51 @@
+<div>
+    <h1>Imperative Interface vs. Declarative Interface</h1>
+    <p>Matplotlib offers two interfaces to generate visualizations. The most commonly used, due to its simplicity, is the MATLAB-style imperative interface that calls the plot method directly from the Matplotlib class, aggregating both Figure and Axes into a single command. Here is an example of the imperative interface.</p>
+</div>
+
+<div>
+    <h1>Imperative Interface</h1>
+    <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+%config InlineBackend.figure_format = 'retina'
+
+# Generate data
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+# Create a plot using the imperative interface
+plt.plot(x, y, label='Sine Curve')
+plt.title('Imperative Interface Example')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.legend()
+plt.show()</code></pre>
+</div>
+
+<div> 
+    <img>
+</div>
+
+
+<div>
+<h1>Declarative or Object Interface  </h1>
+<p>The alternative and more powerful interface is the object interface. Although it requires more code, it provides users with greater flexibility in developing complex visualizations. In the following example, I replicate the imperative example above using the Object Interface paradigm.</p>
+</div>
+
+
+<div>
+    <pre><code>fig, ax = plt.figure( figsize=(8,5)), plt.axes()
+
+# Generate data
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+ax.plot( x, y, label='Sine Curve')
+ax.set_title('Declarative Interface Example')
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.legend()
+plt.show()
+</code></pre>
+</div>
